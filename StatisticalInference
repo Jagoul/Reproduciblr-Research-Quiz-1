@@ -1,0 +1,130 @@
+Question 1
+Consider influenza epidemics for two parent heterosexual families. 
+Suppose that the probability is 17% that at least one of the parents has contracted the disease. 
+The probability that the father has contracted influenza is 12% while the probability that both 
+the mother and father have contracted the disease is 6%. What is the probability that the mother
+has contracted influenza?
+Ans-
+This question is based on standard probability of a union of events. Let A∪B represent that at 
+least one of the parents has contracted a disease. Let A represent that the father has contracted 
+the disease and let A∩B represent that both parents have contracted the disease. Using probability axioms, 
+we thus get:
+
+P(A∪B)=P(A)+P(B)−P(A∩B)
+
+We wish to solve for the probability of the mother getting the disease. Using the notation above and what 
+is given in the question, we can thus deduce:
+
+P(A)=0.12P(A∩B)=0.06P(A∪B)=0.17
+
+Therefore, by straight substituting, we wish to solve for P(B) and thus:
+
+0.17=0.12+P(B)−0.06P(B)=0.11
+####
+Question 2
+A random variable, X is uniform, a box from 0 to 1 of height 1. (So that it's density is f(x)=1 for 
+0≤x≤1.) What is it's 75th percentile?
+Ans-
+The PDF of the density is given as: P(x)=1,s.t. x∈[0,1]. The 75th percentile is defined as the point x w
+here 75% of the area is on the left side while 25% is on the right side. Because the total area of this 
+density is 1 and is a uniform box, we simply need to figure out at what x value would give us 0.75 for the 
+CDF. In this case, it's simply 0.75.
+####
+
+Question 3-
+You are playing a game with a friend where you flip a coin and if it comes up heads
+you give her X dollars and if it comes up tails she gives you Y dollars. 
+The probability that the coin is heads is p (some number between 0 and 1.) 
+What has to be true about X and Y to make so that both of your expected total earnings is 0. 
+(The game would then be called “fair”.)
+Ans-
+Let Z denote a random variable where Z=0 denotes the probability of getting X dollars by 
+flipping a heads while Z=1 denotes the probability of losing Y when flipping a tails.
+We wish to determine the expected payout given that the probability of flipping a heads is 
+p while for tails it's 1−p. In other words:
+
+P(Z=0)=pP(Z=1)=1−p
+
+As such, the expected payout E[Z] is thus:
+
+E[Z]=∑yyP[Z=y]
+
+y is how much money we gain / lose when we flip a heads or tails. In other words, the expected value is such:
+
+E[Z]=X(P(Z=0))−Y(P[Z=1])
+
+To ensure a fair game, the expected payout should be 0 or E[Z]=0. Setting the above equation to 0, 
+and substituting our probabilities, we thus get:
+
+0=Xp−Y(1−p)
+
+Rearranging this equation thus gives:
+
+YX=p1−p
+
+##
+Question 4
+A density that looks like a normal density (but may or may not be exactly normal) is exactly
+symmetric about zero. (Symmetric means if you flip it around zero it looks the same.) What is its median?
+Ans-
+ If the density is symmetric about zero (and even if it doesn't touch the horizontal axis), what this 
+ means is that the centre of the distribution is at 0 while the left and right tails will have the
+ same area. Because of the fact that the density is symmetric about zero, this implies that right 
+ at the middle of the total area is where the horizontal axis would be 0. The median is defined as
+ the point where it is the 50th percentile. Being right 
+ in the middle of the total area is the same thing as being the median and so the answer is Yes, 
+ the median must be 0.
+ 
+ ##
+ Question 5
+ 
+
+Consider the following PMF generated in R
+
+x <- 1:4
+p <- x/sum(x)
+temp <- rbind(x, p)
+rownames(temp) <- c("X", "Prob")
+temp
+
+##      [,1] [,2] [,3] [,4]
+## X     1.0  2.0  3.0  4.0
+## Prob  0.1  0.2  0.3  0.4
+
+What is the mean?
+
+Ans-
+sum(temp[1, ] * temp[2, ])
+
+## [1] 3
+
+The above code finds the product of each term in the density X followed by their associated 
+probabilities. We will have a 4 element vector which contains these products. The mean is 
+simply adding all of these products together, and hence why we are invoking sum.
+
+##
+Question 6
+A web site (www.medicine.ox.ac.uk/bandolier/band64/b64-7.html) for home pregnancy tests cites the following: “When the subjects using the test were women who collected and tested their own samples, the overall sensitivity was 75%. Specificity was also low, in the range 52% to 75%.” Assume the lower value for the specificity. Suppose a subject has a positive test and that 30% of women taking pregnancy tests are actually pregnant. What number is closest to the probability of pregnancy given the positive test? Express your answer to the nearest percentage point.
+Ans-
+round((0.75 * 0.3)/((0.75 * 0.3) + ((1 - 0.52) * (1 - 0.3))) * 100)
+
+## [1] 40
+
+##
+Question 7
+
+A web site (www.medicine.ox.ac.uk/bandolier/band64/b64-7.html) for home pregnancy tests
+cites the following: “When the subjects using the test were women who collected and
+tested their own samples, the overall sensitivity was 75%. Specificity was also low,
+in the range 52% to 75%.” Assume the lower value for the specificity. Suppose a 
+subject has a positive test and that 30% of women taking pregnancy tests are actually pregnant.
+What number is closest to the probability of pregnancy given the positive test?
+Ans-
+Let F = player makes the first shot F¯¯¯ = player does not make the first shot S = player
+makes the second shot You are given: P(F∪S)=0.9 since at least one shot means they got First 
+shot OR Second short or both (and there are only 2 shots in total) P(F)=0.8 P(S)=0.8 P(F∩S)=0.7 
+You are asked: to find P(S|F¯¯¯)
+P(S|F¯¯¯)=P(S∩F¯¯¯)P(F¯¯¯)
+Notice that P(S)=P(S∩F)+P(S∩F¯¯¯)⟹P(S∩F¯¯¯)=P(S)−P(S∩F)=0.8−0.7=0.1 And P(F¯¯¯)=1−P(F)=1−0.8=0.2 So:
+P(S|F¯¯¯)=P(S∩F¯¯¯)P(F¯¯¯)=0.10.2=0.5=50%
+
